@@ -45,3 +45,37 @@ setTimeout(log, 1000);
 // "c"
 // and that's it 🥳
 ```
+
+### What exact problem does this module solve?
+
+The *TL;DR* story here is that too many times I ended up writing code as such:
+
+```js
+const visited = new WeakSet;
+
+const bootstrap = async () => {
+  for (const thing of things) {
+    if (visited.has(thing)) {
+      visited.add(thing);
+      await init(thing);
+    }
+  }
+};
+```
+
+Now I can use a single utility all over the place to do the same:
+
+```js
+import loopOnce from 'loop-once';
+const unique = loopOnce();
+
+// every time I need to do the same ...
+const bootstrap = async () => {
+  for (const thing of unique(things))
+      await init(thing);
+};
+```
+
+That's it: I don't need to remember or worry about the fact `bootstrap` could be called many times while still executing and that `thing` should never be initialized twice.
+
+I hope this explanation reasons well with you too 👋
