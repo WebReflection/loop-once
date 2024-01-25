@@ -14,7 +14,7 @@ import loopOnce from 'loop-once';
 // over whatever iterable is passed along
 // and arbitrary pass your own Set or WeakSet
 // as once would be otherwise created automatically.
-const loop = loopOnce();
+const unique = loopOnce();
 
 // given a list of references
 // or primitives if a Set is passed along ...
@@ -28,9 +28,9 @@ const iterable = [
 // or how long it would take per each promise
 // to resolve ...
 const log = async () => {
-  // the following loop will log once and in order any
+  // the following loop will log once
   // resolved promise as opposite of many times
-  for (const p of loop(iterable))
+  for (const p of unique(iterable))
     console.log(await p);
 };
 
