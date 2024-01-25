@@ -1,4 +1,7 @@
-# safe-loop
+# loop-once
+
+[![Coverage Status](https://coveralls.io/repos/github/WebReflection/loop-once/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/loop-once?branch=main)
+
 
 A safer loop to iterate synchronously or asynchronously any unique identifier.
 
