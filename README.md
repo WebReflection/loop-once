@@ -28,8 +28,7 @@ const iterable = [
 // or how long it would take per each promise
 // to resolve ...
 const log = async () => {
-  // the following loop will log once
-  // resolved promise as opposite of many times
+  // the following loop will log once resolved promises
   for (const p of unique(iterable))
     console.log(await p);
 };
