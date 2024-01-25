@@ -1,6 +1,6 @@
 {
   "name": "loop-once",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A safer loop for sync or async unique use cases",
   "main": "./cjs/index.js",
   "scripts": {
