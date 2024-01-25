@@ -1,13 +1,12 @@
 {
   "name": "loop-once",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A safer loop for sync or async unique use cases",
   "main": "./cjs/index.js",
   "scripts": {
-    "build": "npm run cjs && npm run rollup:es && npm run rollup:index && npm run ts && npm run test",
+    "build": "npm run cjs && npm run rollup:es && npm run ts && npm run test",
     "cjs": "ascjs --no-default esm cjs",
     "rollup:es": "rollup --config rollup/es.config.js && sed -i.bck 's/^var /self./' es.js && rm -rf es.js.bck",
-    "rollup:index": "rollup --config rollup/index.config.js",
     "ts": "tsc -p .",
     "test": "c8 node test/index.js"
   },
